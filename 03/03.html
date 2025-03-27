@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ejemplo 3 DOM</title>
 </head>
+ 
 <body>
     <div id="app">
         <div class="header">
@@ -14,6 +16,17 @@
         <a href="/">Enlace</a>
     </div>
     <script>
+        var cuerpo = document.getElementsByTagName('body')[0];
+        console.log("Número de nodos hijos de <body>:", cuerpo.childElementCount);
+        console.log("Lista de nodos hijos de <body>:", cuerpo.children);
+        console.log("Nodo padre de <body>:", cuerpo.parentNode);
+        var appElement = document.getElementById("app");
+        if (appElement) {
+            console.log("Lista de nodos hijos del elemento con id 'app':", appElement.children);
+        } else {
+            console.log("No se encontró el elemento con id 'app'.");
+        }
     </script>
 </body>
+
 </html>
