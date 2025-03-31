@@ -7,5 +7,18 @@
 </head>
 <body>
     <header class="card"></header>
+    <script>
+        const header = document.querySelector('.card'); // Aquí seleccionamos la clase .card
+        const title = document.createElement('h1'); // Creamos un nuevo elemento h1
+        title.textContent = 'Título de ejemplo'; // Añadimos texto al h1
+        header.appendChild(title); // Añadimos el h1 al header
+
+        const paragraph = document.createElement('p'); // Creamos un nuevo párrafo
+        paragraph.textContent = 'Este es un párrafo de ejemplo.'; // Añadimos texto al párrafo
+        header.appendChild(paragraph); // Añadimos el párrafo al header
+
+        header.style.backgroundColor = '#f0f0f0'; // Cambiamos el color de fondo del header
+        header.style.padding = '10px'; // Añadimos padding al header
+    </script>
 </body>
 </html>
