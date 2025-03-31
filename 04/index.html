@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,11 +16,13 @@
             max-width: 500px;
             margin: 0 auto;
         }
-        mark{
-            display:none;
+
+        mark {
+            display: none;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <p>Hola a todos.</p>
@@ -30,5 +33,34 @@
             <div>Esto es un desplegable que está colapsado.</div>
         </details>
     </div>
+    <script>
+
+        const container = document.querySelector('.container'); // Seleccionamos la clase .container
+        const strongTag = document.querySelector('strong'); // Seleccionamos la etiqueta strong
+        const markTag = document.querySelector('mark'); // Seleccionamos la etiqueta mark
+        const hiddenParagraphs = document.querySelectorAll('p[hidden]'); // Seleccionamos los párrafos con atributo hidden
+        const detailsElement = document.querySelector('details'); // Seleccionamos los details
+
+        // Cambiamos el texto del primer nodo del container
+        container.firstElementChild.textContent = 'Hola a todos. Bienvenidos al ejemplo de DOM.';
+
+        // Añadimos un nuevo párrafo en el último nodo del container
+        const newParagraph = document.createElement('p');
+        newParagraph.textContent = 'Nuevo mensaje de prueba.';
+        container.appendChild(newParagraph);
+
+        // Cambiamos el texto de la etiqueta strong
+        strongTag.textContent = 'Araceli';
+
+        // Cambiamos el estilo de mark a display='block'
+        markTag.style.display = 'block';
+
+        // Borramos el atributo hidden 
+        hiddenParagraphs.forEach(paragraph => paragraph.removeAttribute('hidden'));
+
+        // Desplegamos el details
+        detailsElement.open = true;
+    </script>
 </body>
+
 </html>
