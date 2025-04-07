@@ -37,6 +37,7 @@ parrafos[2].style.color="#3498db";
 parrafos[2].style.backgroundColor="#e6f2ff";
 parrafos[2].style.bordercolor="#2980b9";
 
+
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("boton1").addEventListener("click", saludar);
     document.getElementById("boton2").addEventListener("click", cambiarColor);

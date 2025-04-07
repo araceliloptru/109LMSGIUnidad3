@@ -1,19 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cambiar Atributo con JavaScript</title>
 </head>
+
 <body>
     <h1>Cambiar Atributo con JavaScript</h1>
     <p>Al pulsar el botón se cambia la imagen y su atributo 'alt'.</p>
     <br>
     <img id="miImagen" src="imagen1.jpg" alt="Imagen original" width="300">
     <br><br>
-    <button onclick="cambiarImagen()">Cambiar Imagen</button>
+    <button onclick="cambiarImagen()">Nueva Imagen</button> <!-- Botón para cambiar a una nueva imagen -->
+    <button onclick="restaurarImagen()">Restaurar Imagen</button> <!-- Nuevo botón para volver a la antigua imagen -->
     <script>
- </script>
+        function cambiarImagen() {
+            const img = document.getElementById('miImagen');
+            img.src = 'imagen2.jpg'; // Cambiamos a la nueva imagen
+            img.alt = 'Nueva imagen'; // Cambiamos el texto alternativo
+        }
+
+        function restaurarImagen() {
+            const img = document.getElementById('miImagen');
+            img.src = 'imagen1.jpg'; // Volvemos a la imagen original
+            img.alt = 'Imagen original'; // Restauramos el texto alternativo
+        }
+    </script>
 
 </body>
-</html>     
+
+</html>
