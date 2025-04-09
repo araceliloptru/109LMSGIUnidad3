@@ -1,5 +1,5 @@
 var titulo=document.getElementById("titulo");
-titulo.innerText="Titulo Nuevo";
+titulo.innerText="Este es el título nuevo";
  
 var parrafos=document.getElementsByClassName("parrafo");
 parrafos[0].innerText="Parrafo 1 modificado";
@@ -37,4 +37,65 @@ parrafos[2].style.color="#3498db";
 parrafos[2].style.backgroundColor="#e6f2ff";
 parrafos[2].style.bordercolor="#2980b9";
 
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("boton1").addEventListener("click", saludar);
+    document.getElementById("boton2").addEventListener("click", cambiarColor);
+    document.getElementById("boton3").addEventListener("click", cambiarParrafos);
+});
+
+
+// Función para mostrar un saludo
+function saludar() {
+    alert("Beep boop beep.");
+}
+
+// Función para cambiar el color del fondo y el título
+function cambiarColor() {
+    const cuerpo = document.body; // Selecciona el cuerpo
+    const titulo = document.querySelector("h1"); // Selecciona el título
  
+    // Verifica si el cuerpo ya tiene el fondo oscuro
+    if (cuerpo.style.backgroundColor === "black") {
+        // Cambiar a fondo blanco
+        cuerpo.style.backgroundColor = "white";
+        cuerpo.style.color = "black";
+        if (titulo) {
+            titulo.style.color = "black"; // Cambiar el título a negro
+        }
+    } else {
+        // Cambiar a fondo oscuro
+        cuerpo.style.backgroundColor = "black";
+        cuerpo.style.color = "white";
+        if (titulo) {
+            titulo.style.color = "white"; // Cambiar el título a blanco
+        }
+    }
+}
+// Función para cambiar el estilo de los párrafos
+let parrafosModificados = false; // Esto es una variable para rastrear el estado de los párrafos
+ 
+// Función para cambiar el estilo de los párrafos
+function cambiarParrafos() {
+    const parrafos = document.querySelectorAll("p");
+ 
+    if (!parrafosModificados) {
+        // Cambiamos el estilo de los párrafos
+        parrafos.forEach(parrafo => {
+            parrafo.style.fontSize = "20px"; // Cambiamos el tamaño de la fuente
+            parrafo.style.letterSpacing = "2px"; // Espaciado entre letras
+            parrafo.style.transform = "rotate(1deg)"; // Rotamos ligeramente
+            parrafo.style.fontWeight = "bold"; // Le ponemos egrita
+        });
+        parrafosModificados = true; // Marcamos como modificados
+    } else {
+        // Restaurar el estilo original de los párrafos
+        parrafos.forEach(parrafo => {
+            parrafo.style.fontSize = ""; // Restaurar tamaño de fuente
+            parrafo.style.letterSpacing = ""; // Restaurar espaciado entre letras
+            parrafo.style.transform = ""; // Restaurar rotación
+            parrafo.style.fontWeight = ""; // Restaurar peso de fuente
+        });
+        parrafosModificados = false; // Marcar como no modificados
+    }
+}
